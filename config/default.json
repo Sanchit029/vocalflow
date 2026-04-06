@@ -1,0 +1,21 @@
+{
+  "deepgram": {
+    "apiKey": "YOUR_DEEPGRAM_API_KEY_HERE",
+    "model": "nova-2",
+    "language": "en",
+    "smart_format": true,
+    "interim_results": true,
+    "utterance_end_ms": 1000,
+    "vad_events": true
+  },
+  "groq": {
+    "apiKey": "YOUR_GROQ_API_KEY_HERE",
+    "model": "llama-3.3-70b-versatile",
+    "maxTokens": 1024
+  },
+  "app": {
+    "hotkey": "Alt+Shift+V",
+    "autoStart": false,
+    "minimizeToTray": true
+  }
+}

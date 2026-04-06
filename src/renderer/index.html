@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VocalFlow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- App Title -->
+    <div class="header">
+      <h1>VocalFlow</h1>
+      <p class="subtitle">Voice-to-Text for Windows</p>
+    </div>
+
+    <!-- API Balance Cards -->
+    <div class="balance-row">
+      <div class="balance-card">
+        <div class="card-top">
+          <span class="card-title">Deepgram</span>
+          <span class="status-dot" id="deepgramStatus"></span>
+        </div>
+        <div class="card-value" id="deepgramBalance">Loading...</div>
+        <div class="card-label" id="deepgramLabel">Checking balance</div>
+      </div>
+      <div class="balance-card">
+        <div class="card-top">
+          <span class="card-title">Groq</span>
+          <span class="status-dot" id="groqStatus"></span>
+        </div>
+        <div class="card-value" id="groqBalance">Loading...</div>
+        <div class="card-label" id="groqLabel">Checking status</div>
+      </div>
+    </div>
+
+    <!-- Record Button -->
+    <div class="record-section">
+      <button class="record-btn" id="recordBtn">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+          <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+        </svg>
+        <span id="recordText">Click to Record</span>
+      </button>
+      <p class="hotkey-text">Hotkey: <kbd id="hotkeyDisplay">Alt+Shift+V</kbd></p>
+    </div>
+
+    <!-- Transcription Output -->
+    <div class="output-section">
+      <div class="output-top">
+        <h3>Transcription</h3>
+        <div class="output-buttons">
+          <label class="toggle-label">
+            <input type="checkbox" id="enhanceToggle">
+            <span class="toggle-switch"></span>
+            AI Enhance
+          </label>
+          <button class="btn-small" id="copyBtn">Copy</button>
+          <button class="btn-small" id="clearBtn">Clear</button>
+        </div>
+      </div>
+      <div class="output-box">
+        <div class="interim" id="interimText"></div>
+        <textarea id="finalText" placeholder="Your transcription will appear here..." readonly></textarea>
+      </div>
+    </div>
+
+    <!-- Language Setting -->
+    <div class="settings-section">
+      <label for="languageSelect">Language:</label>
+      <select id="languageSelect">
+        <option value="en" selected>English</option>
+        <option value="hi">Hindi</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="ja">Japanese</option>
+        <option value="zh">Chinese</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Load scripts in order: services first, then main app -->
+  <script src="services/audioCapture.js"></script>
+  <script src="services/deepgram.js"></script>
+  <script src="services/groq.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

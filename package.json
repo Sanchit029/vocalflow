@@ -1,0 +1,17 @@
+{
+  "name": "vocalflow-windows",
+  "version": "1.0.0",
+  "description": "VocalFlow for Windows - Voice-to-text dictation app using Deepgram and Groq",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": ["voice", "dictation", "speech-to-text", "deepgram", "groq", "electron"],
+  "author": "Sanchit Bishnoi",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^28.0.0"
+  },
+  "devDependencies": {}
+}
